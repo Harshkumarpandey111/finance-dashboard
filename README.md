@@ -42,7 +42,7 @@ Shortcut:- Ctrl + Shift + V
 ## How to Run the Project
 1. Clone the repository
 
-	git clone <your-repo-url>
+	git clone <https://github.com/Harshkumarpandey111/finance-dashboard>
 	cd finance-dashboard
 
 2. Install dependencies

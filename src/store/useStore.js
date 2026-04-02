@@ -11,7 +11,7 @@ const useStore = create(
       // UI State
       role:            'admin',
       darkMode:        false,
-      currency:        'INR',        // ← new: 'INR' | 'USD'
+      currency:        'INR',       
       searchQuery:     '',
       filterCategory:  'all',
       filterType:      'all',
@@ -67,7 +67,7 @@ const useStore = create(
       },
     }),
     {
-      name: 'finance-dashboard-store-v2',   // bump key to avoid stale persisted data
+      name: 'finance-dashboard-store-v2',   
       partialState: (state) => ({
         transactions: state.transactions,
         role:         state.role,

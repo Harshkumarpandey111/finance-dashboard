@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+/* ─── Design tokens ─────────────────────────────────────────── */
+:root {
+  --bg-linen:       #F4F1EC;
+  --bg-surface:     #FDFCFB;
+  --bg-surface-alt: #EEE9E3;
+  --accent-forest:  #3A6449;
+  --accent-terra:   #BB6345;
+  --text-primary:   #1A1917;
+  --text-secondary: #6A6059;
+  --border:         #DDD8D1;
+  --success:        #577F62;
+  --danger:         #B35A3B;
+}
+
+.dark {
+  --bg-linen:       #131110;
+  --bg-surface:     #1A1815;
+  --bg-surface-alt: #212018;
+  --accent-forest:  #569070;
+  --accent-terra:   #D07558;
+  --text-primary:   #EDE9E3;
+  --text-secondary: #968E87;
+  --border:         #2B2824;
+  --success:        #68A87C;
+  --danger:         #D07558;
+}
+
+/* ─── Base ──────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--bg-linen);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-serif { font-family: 'DM Serif Display', serif; }
+
+/* ─── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+
+/* ─── Micro-interaction utilities ───────────────────────────── */
+.transition-theme {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Cards: lift + border brightens on hover */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  border-color: color-mix(in srgb, var(--border) 60%, var(--accent-forest));
+}
+
+/* Icon containers: gentle pulse on card hover */
+.card-hover:hover .icon-glow {
+  box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 8%, transparent);
+}
+
+/* Buttons: press-down feel */
+.btn-press {
+  transition: transform 0.1s ease, opacity 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-press:hover  { opacity: 0.92; }
+.btn-press:active { transform: scale(0.97); }
+
+/* Insight cards: slide-in shimmer on hover */
+.insight-card {
+  transition: background-color 0.18s ease, transform 0.18s ease;
+  cursor: default;
+}
+.insight-card:hover {
+  background-color: color-mix(in srgb, var(--bg-surface-alt) 80%, var(--accent-forest));
+  transform: translateX(2px);
+}
+
+/* Timeline items */
+.timeline-row {
+  transition: opacity 0.15s ease;
+}
+.timeline-row:hover { opacity: 0.85; }
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position:  600px 0; }
+}
+.skeleton {
+  border-radius: 6px;
+  background: linear-gradient(
+    90deg,
+    var(--bg-surface-alt) 25%,
+    color-mix(in srgb, var(--bg-surface-alt) 60%, var(--bg-surface)) 50%,
+    var(--bg-surface-alt) 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.6s infinite linear;
+}
+
+/* ─── Entrance animations ────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in         { animation: fadeInUp 0.35s ease forwards; }
+.animate-fade-in-delay-1 { animation: fadeInUp 0.35s ease 0.05s forwards; opacity: 0; }
+.animate-fade-in-delay-2 { animation: fadeInUp 0.35s ease 0.10s forwards; opacity: 0; }
+.animate-fade-in-delay-3 { animation: fadeInUp 0.35s ease 0.15s forwards; opacity: 0; }
+.animate-fade-in-delay-4 { animation: fadeInUp 0.35s ease 0.20s forwards; opacity: 0; }
+.animate-fade-in-delay-5 { animation: fadeInUp 0.35s ease 0.25s forwards; opacity: 0; }
+
+
+
+body {
+  font-size: 15px;
+  line-height: 1.5;
+}

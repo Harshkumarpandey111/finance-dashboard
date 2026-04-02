@@ -1,5 +1,9 @@
 # Finlens - Personal Finance Dashboard
 
+
+ Live Demo: https://vercel.com/harsh-kumar-pandeys-projects-06049d59 
+ GitHub: https://github.com/Harshkumarpandey111/finance-dashboard
+
 ## Overview
 Finlens is a personal finance dashboard built to track day-to-day money flow in one place.
 It gives a quick view of balance, income, expenses, and spending trends so decisions are easier.
